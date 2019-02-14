@@ -1,0 +1,16 @@
+PODS:
+  - UICollectionViewParallaxCell (0.1.0)
+
+DEPENDENCIES:
+  - UICollectionViewParallaxCell (from `../`)
+
+EXTERNAL SOURCES:
+  UICollectionViewParallaxCell:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UICollectionViewParallaxCell: cd95cea27e2f657000fb857e4c948b97378737be
+
+PODFILE CHECKSUM: 3c06d0f8840a423d69d4ca8ec44f8a59d9728dfa
+
+COCOAPODS: 1.5.3

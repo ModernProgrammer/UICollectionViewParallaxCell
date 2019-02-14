@@ -1,0 +1,6 @@
+framework module Pods_UICollectionViewParallaxCell_Tests {
+  umbrella header "Pods-UICollectionViewParallaxCell_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

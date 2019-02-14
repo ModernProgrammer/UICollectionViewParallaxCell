@@ -1,0 +1,6 @@
+framework module UICollectionViewParallaxCell {
+  umbrella header "UICollectionViewParallaxCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

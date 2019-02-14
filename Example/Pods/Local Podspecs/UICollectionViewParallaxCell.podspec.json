@@ -1,0 +1,22 @@
+{
+  "name": "UICollectionViewParallaxCell",
+  "version": "0.1.0",
+  "summary": "A short description of UICollectionViewParallaxCell.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Diego Bustamante/UICollectionViewParallaxCell",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Diego Bustamante": "diegobust4545@icloud.com"
+  },
+  "source": {
+    "git": "https://github.com/Diego Bustamante/UICollectionViewParallaxCell.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UICollectionViewParallaxCell/Classes/**/*"
+}
