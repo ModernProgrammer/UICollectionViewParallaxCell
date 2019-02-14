@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UICollectionViewParallaxCell_Example' do
+  pod 'UICollectionViewParallaxCell', :path => '../'
+
+  target 'UICollectionViewParallaxCell_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
