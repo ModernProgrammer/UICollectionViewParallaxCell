@@ -13,7 +13,7 @@ A simple way of implementing a parallax effect on a UICollectionView using this 
 
 Here is a video of a vertical scroll [Demo](https://youtu.be/wN3RaSWmP6I)
 
-a
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
