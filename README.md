@@ -1,6 +1,5 @@
 # UICollectionViewParallaxCell
 
-[![CI Status](https://img.shields.io/travis/Diego Bustamante/UICollectionViewParallaxCell.svg?style=flat)](https://travis-ci.org/Diego Bustamante/UICollectionViewParallaxCell)
 [![Version](https://img.shields.io/cocoapods/v/UICollectionViewParallaxCell.svg?style=flat)](https://cocoapods.org/pods/UICollectionViewParallaxCell)
 [![License](https://img.shields.io/cocoapods/l/UICollectionViewParallaxCell.svg?style=flat)](https://cocoapods.org/pods/UICollectionViewParallaxCell)
 [![Platform](https://img.shields.io/cocoapods/p/UICollectionViewParallaxCell.svg?style=flat)](https://cocoapods.org/pods/UICollectionViewParallaxCell)
