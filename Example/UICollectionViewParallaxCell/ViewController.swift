@@ -14,7 +14,11 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     let cellId = "cellId"
     let photos = ["El_Capitan_-_MacBook_Pro_Wallpaper","Glacier_Falls_-_MacBook_Pro_Wallpaper","Lost_Coast_-_MacBook_Pro_Wallpaper","Sanoma_-_MacBook_Pro_Wallpaper","The_Surf_-_MacBook_Pro_Wallpaper"]
-    let scrollDirection : UICollectionView.ScrollDirection = .horizontal
+    
+    
+    let paddingOffset : CGFloat = 150
+    let scrollDirection : UICollectionView.ScrollDirection = .vertical
+    let paging : Bool = false
     
     lazy var collectionView:  UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -22,14 +26,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.isPagingEnabled = true
+        collectionView.isPagingEnabled = paging
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .red
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
         collectionView.register(ViewCell.self, forCellWithReuseIdentifier: cellId)
@@ -62,26 +66,26 @@ extension ViewController {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ViewCell
+        guard let image = UIImage(named: photos[indexPath.item]) else { return cell }
         let bounds = collectionView.bounds
-        // initiate parallax
-        cell.paddingOffset = 150
+
+        cell.setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
         cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
-        cell.parallaxImage.image = UIImage(named: photos[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let height = view.frame.height
+        let height = view.frame.height/3
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 1
     }
 }
 

@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UICollectionViewParallaxCell'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of UICollectionViewParallaxCell.'
+  s.version          = '>= 3.2'
+  s.summary          = 'A parallax effect for a UICollectionViewCell.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,18 +18,16 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+TODO: This CocoaPod will easily allow you to add a parallax effect on either a vertical or horizontal scroll on a UICollectionView.
                        DESC
 
-  s.homepage         = 'https://github.com/Diego Bustamante/UICollectionViewParallaxCell'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/ModernProgrammer/UICollectionViewParallaxCell'
+  s.screenshots     = 'https://s3.amazonaws.com/diegophotos/github/ParallaxCells.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Diego Bustamante' => 'diegobust4545@icloud.com' }
-  s.source           = { :git => 'https://github.com/Diego Bustamante/UICollectionViewParallaxCell.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/ModernProgrammer/UICollectionViewParallaxCell.git'}
 
-  s.ios.deployment_target = '8.0'
-
+  s.ios.deployment_target = '9.0'
   s.source_files = 'UICollectionViewParallaxCell/Classes/**/*'
   
   # s.resource_bundles = {
@@ -37,6 +35,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

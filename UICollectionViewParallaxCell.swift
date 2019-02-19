@@ -9,29 +9,19 @@ import UIKit
 
 @available(iOS 9.0, *)
 open class UICollectionViewParallaxCell : UICollectionViewCell {
-    public var paddingOffset: CGFloat = 150
-    public let parallaxImage : UIImageView = {
+    public var paddingOffset: CGFloat = 0
+    private let parallaxImage : UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = false
         return image
     }()
-    
-    let imageContainer : UIView = {
+    private let imageContainer : UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.clipsToBounds = true
         return view
     }()
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupbackgroundParallax()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
 // MARK: Parallax Functions
@@ -76,20 +66,24 @@ extension UICollectionViewParallaxCell {
 @available(iOS 9.0, *)
 @available(iOS 9.0, *)
 extension UICollectionViewParallaxCell {
-    fileprivate func setupbackgroundParallax() {
+    public func setupbackgroundParallax(image: UIImage, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
+        parallaxImage.image = image
+        
+        self.paddingOffset = paddingOffset
+
         addSubview(imageContainer)
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imageContainer.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        imageContainer.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imageContainer.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        imageContainer.topAnchor.constraint(equalTo: topAnchor, constant: topConstraint).isActive = true
+        imageContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomConstraint).isActive = true
+        imageContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
+        imageContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -trailingConstraint).isActive = true
         imageContainer.addSubview(parallaxImage)
         
         parallaxImage.translatesAutoresizingMaskIntoConstraints = false
-        parallaxImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: -paddingOffset).isActive = true
-        parallaxImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: paddingOffset).isActive = true
-        parallaxImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -paddingOffset).isActive = true
-        parallaxImage.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: paddingOffset).isActive = true
+        parallaxImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: -(paddingOffset + topConstraint)).isActive = true
+        parallaxImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: (paddingOffset + bottomConstraint)).isActive = true
+        parallaxImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -(paddingOffset + leadingConstraint)).isActive = true
+        parallaxImage.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: (paddingOffset + trailingConstraint)).isActive = true
     }
 }
 
