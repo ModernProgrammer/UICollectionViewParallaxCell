@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UICollectionViewParallaxCell'
-  s.version          = '>= 3.2'
+  s.version          = '0.1.0'
   s.summary          = 'A parallax effect for a UICollectionViewCell.'
 
 # This description is used to generate tags and improve search results.
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: This CocoaPod will easily allow you to add a parallax effect on either a vertical or horizontal scroll on a UICollectionView.
-                       DESC
+  s.description      = 'This CocoaPod will easily allow you to add a parallax effect on either a vertical or horizontal scroll on a UICollectionView.'
 
   s.homepage         = 'https://github.com/ModernProgrammer/UICollectionViewParallaxCell'
   s.screenshots     = 'https://s3.amazonaws.com/diegophotos/github/ParallaxCells.png'
