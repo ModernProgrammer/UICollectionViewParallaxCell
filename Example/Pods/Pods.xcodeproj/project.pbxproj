@@ -13,9 +13,9 @@
 		92020205B567CC5AC0D16D2AE95EF591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		93930F30DD26A573813D2F96D21075AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		9F65E1D7C8BFEF912B4459E729A68497 /* Pods-UICollectionViewParallaxCell_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 340ADF6738BB6D403885C13C7CE7D468 /* Pods-UICollectionViewParallaxCell_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B20C6D22221620EF00EE7219 /* UICollectionViewParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262261E221616D10017B2FF /* UICollectionViewParallaxCell.swift */; };
-		B262261F221616D10017B2FF /* UICollectionViewParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262261E221616D10017B2FF /* UICollectionViewParallaxCell.swift */; };
-		C1BC5AC34F6E760C2A48B815972CB628 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E9D34717F5AC57A1848A83D3FF524 /* ReplaceMe.swift */; };
+		B20C6D22221620EF00EE7219 /* UICollectionViewParallaxCellBACKUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262261E221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift */; };
+		B262261F221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262261E221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift */; };
+		C1BC5AC34F6E760C2A48B815972CB628 /* UICollectionViewParallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16E9D34717F5AC57A1848A83D3FF524 /* UICollectionViewParallaxCell.swift */; };
 		C527B2321EA69099B0EBAACEC5D430AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		D2CAB762EB244572631868B5B54CC328 /* Pods-UICollectionViewParallaxCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1785C0EB4A99154042D3C0F4869BCDFC /* Pods-UICollectionViewParallaxCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF4A2AC141C34DB58439EF0CCB9236C0 /* Pods-UICollectionViewParallaxCell_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 901A917B88B3AE23789B39A52ED4A900 /* Pods-UICollectionViewParallaxCell_Tests-dummy.m */; };
@@ -63,8 +63,8 @@
 		901A917B88B3AE23789B39A52ED4A900 /* Pods-UICollectionViewParallaxCell_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UICollectionViewParallaxCell_Tests-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		961395CD206C5E7618B51C132586BD10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A16E9D34717F5AC57A1848A83D3FF524 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = UICollectionViewParallaxCell/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
-		B262261E221616D10017B2FF /* UICollectionViewParallaxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxCell.swift; sourceTree = "<group>"; };
+		A16E9D34717F5AC57A1848A83D3FF524 /* UICollectionViewParallaxCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewParallaxCell.swift; path = UICollectionViewParallaxCell/Classes/UICollectionViewParallaxCell.swift; sourceTree = "<group>"; };
+		B262261E221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewParallaxCellBACKUP.swift; sourceTree = "<group>"; };
 		B590A55AAD591B4747901E01D451A06A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA4E90D2D6069AB13743CA67D417EE5D /* Pods-UICollectionViewParallaxCell_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UICollectionViewParallaxCell_Tests.modulemap"; sourceTree = "<group>"; };
 		CC5EF9F44CCDD311488162ACAFF1755B /* Pods_UICollectionViewParallaxCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UICollectionViewParallaxCell_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,10 +222,10 @@
 		FE400EBB7AC7026FF8079282843EFD84 /* UICollectionViewParallaxCell */ = {
 			isa = PBXGroup;
 			children = (
-				A16E9D34717F5AC57A1848A83D3FF524 /* ReplaceMe.swift */,
+				A16E9D34717F5AC57A1848A83D3FF524 /* UICollectionViewParallaxCell.swift */,
 				CACE8256D3962505E7E3258DD4EAEDAD /* Pod */,
 				C132F38B50F89EB4F7CC4ED3150BB855 /* Support Files */,
-				B262261E221616D10017B2FF /* UICollectionViewParallaxCell.swift */,
+				B262261E221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift */,
 			);
 			name = UICollectionViewParallaxCell;
 			path = ../..;
@@ -364,8 +364,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B20C6D22221620EF00EE7219 /* UICollectionViewParallaxCell.swift in Sources */,
-				C1BC5AC34F6E760C2A48B815972CB628 /* ReplaceMe.swift in Sources */,
+				B20C6D22221620EF00EE7219 /* UICollectionViewParallaxCellBACKUP.swift in Sources */,
+				C1BC5AC34F6E760C2A48B815972CB628 /* UICollectionViewParallaxCell.swift in Sources */,
 				3E5AF2AEB54EDF9744E79C6ACEC5FFB8 /* UICollectionViewParallaxCell-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				082AB04238C5F5A7A343B4E8AFE7FD6D /* Pods-UICollectionViewParallaxCell_Example-dummy.m in Sources */,
-				B262261F221616D10017B2FF /* UICollectionViewParallaxCell.swift in Sources */,
+				B262261F221616D10017B2FF /* UICollectionViewParallaxCellBACKUP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
