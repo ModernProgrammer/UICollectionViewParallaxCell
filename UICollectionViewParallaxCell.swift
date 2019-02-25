@@ -10,13 +10,13 @@ import UIKit
 @available(iOS 9.0, *)
 open class UICollectionViewParallaxCell : UICollectionViewCell {
     public var paddingOffset: CGFloat = 0
-    private let parallaxImage : UIImageView = {
+    public let parallaxImage : UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = false
         return image
     }()
-    private let imageContainer : UIView = {
+    public let imageContainer : UIView = {
         let view = UIView()
         view.backgroundColor = .black
         view.clipsToBounds = true

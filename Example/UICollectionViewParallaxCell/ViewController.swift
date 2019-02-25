@@ -15,8 +15,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let cellId = "cellId"
     let photos = ["El_Capitan_-_MacBook_Pro_Wallpaper","Glacier_Falls_-_MacBook_Pro_Wallpaper","Lost_Coast_-_MacBook_Pro_Wallpaper","Sanoma_-_MacBook_Pro_Wallpaper","The_Surf_-_MacBook_Pro_Wallpaper"]
     
-    
-    let paddingOffset : CGFloat = 150
+    // Parallax Cell variables
+    let paddingOffset : CGFloat = 80 // 20 
     let scrollDirection : UICollectionView.ScrollDirection = .vertical
     let paging : Bool = false
     
@@ -27,15 +27,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isPagingEnabled = paging
-        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.contentInsetAdjustmentBehavior = .always
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = UIColor.init(white: 1, alpha: 0.95)
         collectionView.register(ViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -69,6 +68,7 @@ extension ViewController {
         guard let image = UIImage(named: photos[indexPath.item]) else { return cell }
         let bounds = collectionView.bounds
 
+        // setup Parallax Cell
         cell.setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
         cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
         return cell
@@ -81,11 +81,11 @@ extension ViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 10
     }
 }
 
