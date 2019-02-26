@@ -28,6 +28,36 @@ it, simply add the following line to your Podfile:
 pod 'UICollectionViewParallaxCell'
 ```
 
+Once installed, go to your Custom UICollectionViewCell class and import UICollectionViewParallaxCell
+```ruby
+import UICollectionViewParallaxCell
+```
+
+In your custom UICollectionViewCell class, inherit the UICollectionViewParallaxCell class.
+
+```ruby
+class CustomParallaxCell: UICollectionViewParallaxCell {...}
+```
+
+Within that class declare a UIImage 
+```ruby
+class CustomParallaxCell: UICollectionViewParallaxCell {
+var backgroundImage : UIImage? {
+        didSet {
+            guard let image = backgroundImage else { return }
+            setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 0, bottomConstraint: 0, leadingConstraint: 0, trailingConstraint: 0)
+            picTitle.text = image
+            setupUI()
+        }
+    }
+}
+```
+
+*Note: paddingOffset is a variable declared within the UICollectionViewParallaxCell which by default is a CGFloat of 0. We will update the offset within the collectionView function, cellForItemAt.
+
+
+
+
 ## Author
 
 Diego Bustamante, diegobust4545@icloud.com
