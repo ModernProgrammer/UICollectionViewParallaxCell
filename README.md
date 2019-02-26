@@ -63,4 +63,3 @@ Diego Bustamante, diegobust4545@icloud.com
 ## License
 
 UICollectionViewParallaxCell is available under the MIT license. See the LICENSE file for more info.
-# UICollectionViewParallaxCell
