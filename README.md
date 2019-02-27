@@ -8,10 +8,22 @@
 
 A simple way of implementing a parallax effect on a UICollectionView using this a Parallax Cell. With this Parallax Cell you will be able to easily implement a parallax effect on either a vertical or horizontal scroll.
 
+
 ![ParallaxCellDemo](https://s3.amazonaws.com/diegophotos/github/ParallaxCells.png)
 
 Here is a video of a vertical scroll [Demo](https://youtu.be/wN3RaSWmP6I)
 
+## Functionality
+With the UICollectionViewParallaxCell, you have control over the following:
+* Parallax effect:
+  * Vertical Scroll
+  * Horizontal Scroll
+* Constraints
+  * Top Constraint
+  * Bottom Constraint
+  * Left Constraint
+  * Right Constraint
+* ParallaxOffset speed
 
 
 ## Installation
@@ -23,13 +35,13 @@ it, simply add the following line to your Podfile:
 pod 'UICollectionViewParallaxCell'
 ```
 
+## UICollectionViewParallaxCell Example
 Once installed, go to your Custom UICollectionViewCell class and import UICollectionViewParallaxCell
 ```ruby
 import UICollectionViewParallaxCell
 ```
 
 In your custom UICollectionViewCell class, inherit the UICollectionViewParallaxCell class.
-
 ```ruby
 class CustomParallaxCell: UICollectionViewParallaxCell {...}
 ```
@@ -37,12 +49,13 @@ class CustomParallaxCell: UICollectionViewParallaxCell {...}
 Within that class declare a UIImage 
 ```ruby
 class CustomParallaxCell: UICollectionViewParallaxCell {
-var backgroundImage : UIImage? {
-        didSet {
-            guard let image = backgroundImage else { return }
-            setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 0, bottomConstraint: 0, leadingConstraint: 0, trailingConstraint: 0)
+        var backgroundImage : UIImage? {
+                didSet {
+                    guard let image = backgroundImage else { return }
+                    setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 0, bottomConstraint: 0, leadingConstraint: 0, trailingConstraint: 0)
+                }
+            }
         }
-    }
 }
 ```
 
