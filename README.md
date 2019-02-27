@@ -53,7 +53,7 @@ var backgroundImage : UIImage? {
 
 *Note: paddingOffset is a variable declared within the UICollectionViewParallaxCell which by default is a CGFloat of 0. We will update the offset within the collectionView function, cellForItemAt.
 
-In the class with your UICollectionView go to your cellForItemAt function. 
+In the class with your UICollectionView, go to your cellForItemAt function. 
 Within in it declare the following:
 ```ruby
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,7 +66,8 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 }
 ```
 
-Next call through the scrollViewDidScroll function in the 
+Next call the scrollViewDidScroll function in the class with your UICollectionView.
+Declare the following.
 ```ruby 
 func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let cells = collectionView.visibleCells as! [CustomParallaxCell]
