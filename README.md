@@ -67,7 +67,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 ```
 
 Next call the scrollViewDidScroll function in the class with your UICollectionView.
-Declare the following.
+Declare the following:
 ```ruby 
 func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let cells = collectionView.visibleCells as! [CustomParallaxCell]
