@@ -61,7 +61,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
         cell.paddingOffset = 150 // declares the offset intensity of parallax
         cell.backgroundImage = // pass through object to instantiate the setupbackgroundParallax function in the didSet
         let bounds = collectionView.bounds // variable for the collectionView bounds
-        cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection) // instantiate the inital bounds of the collectionview
+        cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: .vertical) // instantiate the inital bounds of the collectionview
         return cell
 }
 ```
@@ -72,10 +72,12 @@ func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let cells = collectionView.visibleCells as! [CustomParallaxCell]
         let bounds = collectionView.bounds
         for cell in cells {
-            cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
+            cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: .vertical)
         }
 }
 ```
+
+Run project and enjoy.
 
 
 ## Author
