@@ -69,7 +69,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
 Next call through the scrollViewDidScroll function in the 
 ```ruby 
 func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let cells = collectionView.visibleCells as! [ParallaxCell]
+        let cells = collectionView.visibleCells as! [CustomParallaxCell]
         let bounds = collectionView.bounds
         for cell in cells {
             cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
