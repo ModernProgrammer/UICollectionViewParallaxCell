@@ -6,7 +6,8 @@
 
 ## Description
 
-A simple way of implementing a parallax effect on a UICollectionView using this a Parallax Cell. With this Parallax Cell you will be able to easily implement a parallax effect on either a vertical or horizontal scroll.
+
+A simple way of implementing a parallax effect on a UICollectionView. With UICollectionViewParallaxCell,  you will be able to easily implement a parallax effect on either a vertical or horizontal scroll.
 
 
 ![ParallaxCellDemo](https://s3.amazonaws.com/diegophotos/github/ParallaxCells.png)
