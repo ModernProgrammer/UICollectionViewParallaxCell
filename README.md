@@ -37,6 +37,8 @@ pod 'UICollectionViewParallaxCell'
 ```
 
 ## UICollectionViewParallaxCell Example
+*Note:This is assuming you have a UICollectionView currently created.
+
 Once installed, go to your Custom UICollectionViewCell class and import UICollectionViewParallaxCell
 ```ruby
 import UICollectionViewParallaxCell
