@@ -9,7 +9,6 @@
 import UIKit
 import UICollectionViewParallaxCell
 
-// Ensure you import and inherit from UICollectionViewParallaxCell
 class ViewCell: UICollectionViewParallaxCell {
     let label : UILabel = {
         let label = UILabel()

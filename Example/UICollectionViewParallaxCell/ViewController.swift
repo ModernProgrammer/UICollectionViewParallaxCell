@@ -16,7 +16,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     let photos = ["El_Capitan_-_MacBook_Pro_Wallpaper","Glacier_Falls_-_MacBook_Pro_Wallpaper","Lost_Coast_-_MacBook_Pro_Wallpaper","Sanoma_-_MacBook_Pro_Wallpaper","The_Surf_-_MacBook_Pro_Wallpaper"]
     
     // Parallax Cell variables
-    let paddingOffset : CGFloat = 80 // 20
+    let paddingOffset : CGFloat = 80 // 20 sutle 
     let scrollDirection : UICollectionView.ScrollDirection = .vertical
     let paging : Bool = false
     

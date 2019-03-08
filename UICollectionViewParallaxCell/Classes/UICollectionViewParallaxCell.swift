@@ -10,7 +10,7 @@ import UIKit
 @available(iOS 9.0, *)
 open class UICollectionViewParallaxCell : UICollectionViewCell {
     public var paddingOffset: CGFloat = 0
-    public let parallaxImage : UIImageView = {
+    public var parallaxImage : UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = false
@@ -29,6 +29,7 @@ open class UICollectionViewParallaxCell : UICollectionViewCell {
 extension UICollectionViewParallaxCell {
     // Parallax Formula was taken from this great dude
     // https://www.youtube.com/watch?v=B3I2Bj_Y6p8
+    
     public func parallaxOffset(collectionViewBounds bounds: CGRect, scrollDirecton: UICollectionView.ScrollDirection){
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let offset = CGPoint(x: center.x - self.center.x, y: center.y - self.center.y)
@@ -66,8 +67,8 @@ extension UICollectionViewParallaxCell {
 @available(iOS 9.0, *)
 @available(iOS 9.0, *)
 extension UICollectionViewParallaxCell {
-    public func setupbackgroundParallax(image: UIImage, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
-        parallaxImage.image = image
+    public func setupbackgroundParallax(image: UIImageView, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
+        parallaxImage = image
         
         self.paddingOffset = paddingOffset
         
