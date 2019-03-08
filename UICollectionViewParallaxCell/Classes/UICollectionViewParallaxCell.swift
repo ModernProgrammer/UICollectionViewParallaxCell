@@ -12,8 +12,6 @@ open class UICollectionViewParallaxCell : UICollectionViewCell {
     public var paddingOffset: CGFloat = 0
     public var parallaxImage : UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = false
         return image
     }()
     public let imageContainer : UIView = {
@@ -67,8 +65,8 @@ extension UICollectionViewParallaxCell {
 @available(iOS 9.0, *)
 @available(iOS 9.0, *)
 extension UICollectionViewParallaxCell {
-    public func setupbackgroundParallax(image: UIImageView, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
-        parallaxImage = image
+    public func setupbackgroundParallax(imageView: UIImageView, cornerRadius: CGFloat, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
+        parallaxImage = imageView
         
         self.paddingOffset = paddingOffset
         
@@ -78,6 +76,8 @@ extension UICollectionViewParallaxCell {
         imageContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomConstraint).isActive = true
         imageContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
         imageContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -trailingConstraint).isActive = true
+        imageContainer.layer.cornerRadius = cornerRadius
+
         imageContainer.addSubview(parallaxImage)
         
         parallaxImage.translatesAutoresizingMaskIntoConstraints = false

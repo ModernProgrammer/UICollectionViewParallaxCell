@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UICollectionViewParallaxCell'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A parallax effect for a UICollectionViewCell.'
 
 # This description is used to generate tags and improve search results.

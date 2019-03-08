@@ -67,9 +67,12 @@ extension ViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ViewCell
         guard let image = UIImage(named: photos[indexPath.item]) else { return cell }
         let bounds = collectionView.bounds
-
+        
+        let imageView = UIImageView(image: image)
+        imageView.clipsToBounds = false
+        imageView.contentMode = .scaleAspectFill
         // setup Parallax Cell
-        cell.setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
+        cell.setupbackgroundParallax(imageView: imageView, cornerRadius: 20, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
         cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
         return cell
     }
