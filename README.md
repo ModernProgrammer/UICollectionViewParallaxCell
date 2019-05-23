@@ -54,8 +54,9 @@ Within that class declare a UIImage
 class CustomParallaxCell: UICollectionViewParallaxCell {
         var backgroundImage : UIImage? {
                 didSet {
-                    guard let image = backgroundImage else { return }
-                    setupbackgroundParallax(image: image, paddingOffset: paddingOffset, topConstraint: 0, bottomConstraint: 0, leadingConstraint: 0, trailingConstraint: 0)
+                guard let imageView = backgroundImage else { return }
+                imageView.contentMode = .scaleAspectFill
+                setupbackgroundParallax(imageView: imageView, cornerRadius: 0, paddingOffset: paddingOffset, topConstraint: 0, bottomConstraint: 0, leadingConstraint: 0, trailingConstraint: 0)
                 }
             }
         }
