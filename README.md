@@ -52,7 +52,7 @@ class CustomParallaxCell: UICollectionViewParallaxCell {...}
 Within that class declare a UIImage 
 ```ruby
 class CustomParallaxCell: UICollectionViewParallaxCell {
-        var backgroundImage : UIImage? {
+        var backgroundImage : UIImageView? {
                 didSet {
                 guard let imageView = backgroundImage else { return }
                 imageView.contentMode = .scaleAspectFill
@@ -71,7 +71,7 @@ Within in it declare the following:
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CustomParallaxCell
         cell.paddingOffset = 150 // declares the offset intensity of parallax
-        cell.backgroundImage = // pass through object to instantiate the setupbackgroundParallax function in the didSet
+        cell.backgroundImage = // pass through the UIImageView object to instantiate the setupbackgroundParallax function in the didSet
         let bounds = collectionView.bounds // variable for the collectionView bounds
         cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: .vertical) // instantiate the inital bounds of the collectionview
         return cell
