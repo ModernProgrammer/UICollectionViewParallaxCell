@@ -72,7 +72,7 @@ extension ViewController {
         imageView.clipsToBounds = false
         imageView.contentMode = .scaleAspectFill
         // setup Parallax Cell
-        cell.setupbackgroundParallax(imageView: imageView, cornerRadius: 20, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
+        cell.setupbackgroundParallax(imageView: imageView, cornerRadius: 0, paddingOffset: paddingOffset, topConstraint: 40, bottomConstraint: 80, leadingConstraint: 20, trailingConstraint: 20)
         cell.parallaxOffset(collectionViewBounds: bounds, scrollDirecton: scrollDirection)
         return cell
     }
