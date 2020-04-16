@@ -25,9 +25,6 @@ open class UICollectionViewParallaxCell : UICollectionViewCell {
 // MARK: Parallax Functions
 @available(iOS 9.0, *)
 extension UICollectionViewParallaxCell {
-    // Parallax Formula was taken from this great dude
-    // https://www.youtube.com/watch?v=B3I2Bj_Y6p8
-    
     public func parallaxOffset(collectionViewBounds bounds: CGRect, scrollDirecton: UICollectionView.ScrollDirection){
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let offset = CGPoint(x: center.x - self.center.x, y: center.y - self.center.y)
@@ -42,48 +39,38 @@ extension UICollectionViewParallaxCell {
             let scaleFactor = paddingOffset / maxHorizontalOffset
             let parallaxOffset = (-offset.x * scaleFactor)
             parallaxImage.transform = CGAffineTransform(translationX: parallaxOffset, y: 0)
+        default:
+            print()
         }
     }
 }
 
 // MARK: UI Function
 @available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
-@available(iOS 9.0, *)
 extension UICollectionViewParallaxCell {
     public func setupbackgroundParallax(imageView: UIImageView, cornerRadius: CGFloat, paddingOffset: CGFloat, topConstraint: CGFloat, bottomConstraint: CGFloat, leadingConstraint: CGFloat, trailingConstraint: CGFloat) {
         parallaxImage = imageView
-        
         self.paddingOffset = paddingOffset
         
         addSubview(imageContainer)
         imageContainer.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.topAnchor.constraint(equalTo: topAnchor, constant: topConstraint).isActive = true
-        imageContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomConstraint).isActive = true
-        imageContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint).isActive = true
-        imageContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -trailingConstraint).isActive = true
-        imageContainer.layer.cornerRadius = cornerRadius
-
-        imageContainer.addSubview(parallaxImage)
+        NSLayoutConstraint.activate([
+            imageContainer.topAnchor.constraint(equalTo: topAnchor, constant: topConstraint),
+            imageContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -bottomConstraint),
+            imageContainer.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leadingConstraint),
+            imageContainer.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -trailingConstraint)
+        ])
         
+
+        imageContainer.layer.cornerRadius = cornerRadius
+        imageContainer.addSubview(parallaxImage)
         parallaxImage.translatesAutoresizingMaskIntoConstraints = false
-        parallaxImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: -(paddingOffset + topConstraint)).isActive = true
-        parallaxImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: (paddingOffset + bottomConstraint)).isActive = true
-        parallaxImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -(paddingOffset + leadingConstraint)).isActive = true
-        parallaxImage.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: (paddingOffset + trailingConstraint)).isActive = true
+        NSLayoutConstraint.activate([
+            parallaxImage.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: -(paddingOffset + topConstraint)),
+            parallaxImage.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: (paddingOffset + bottomConstraint)),
+            parallaxImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor, constant: -(paddingOffset + leadingConstraint)),
+            parallaxImage.trailingAnchor.constraint(equalTo: imageContainer.trailingAnchor, constant: (paddingOffset + trailingConstraint))
+        ])
     }
 }
 
