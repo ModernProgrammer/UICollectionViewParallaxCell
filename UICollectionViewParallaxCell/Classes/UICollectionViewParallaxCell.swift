@@ -42,6 +42,7 @@ extension UICollectionViewParallaxCell {
             let scaleFactor = paddingOffset / maxHorizontalOffset
             let parallaxOffset = (-offset.x * scaleFactor)
             parallaxImage.transform = CGAffineTransform(translationX: parallaxOffset, y: 0)
+        }
     }
 }
 
